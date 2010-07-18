@@ -38,6 +38,12 @@ Todos.mainPage = SC.Page.design({
       backgroundColor: 'white',
  
       contentView: SC.ListView.design({
+        contentBinding: 'Todos.tasksController.arrangedObjects',
+        selectionBinding: 'Todos.tasksController.selection',
+        contentValueKey: "description",     
+        contentCheckboxKey: "isDone",
+       
+        rowHeight: 21 
       })
     }),
     
@@ -50,7 +56,7 @@ Todos.mainPage = SC.Page.design({
         layout: { centerY: 0, height: 18, left: 20, right: 20 },
         textAlign: SC.ALIGN_CENTER,
         
-        value: "Item Count"
+        valueBinding: "Todos.tasksController.summary"
       })
     })
 
